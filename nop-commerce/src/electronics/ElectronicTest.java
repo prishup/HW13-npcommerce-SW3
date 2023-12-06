@@ -1,6 +1,7 @@
 package electronics;
 
 import browsefactory.BaseTest;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +17,25 @@ public class ElectronicTest extends BaseTest {
     public void setUpOpenBrowser() {  //navigating to the Homepage
         openBrowser(baseUrl);
 
-}
+    }
+String email = "kish12345@yahoo.com";
+    public void login() throws InterruptedException {
+            Actions actions = new Actions(driver);
+            WebElement loginLink = driver.findElement(By.xpath("//a[contains(text(),'Log in')]"));
+            loginLink.click();
+            WebElement emailLoginField = driver.findElement(By.id("Email"));
+            emailLoginField.sendKeys(email);
+
+        WebElement passwordField = driver.findElement(By.id("Password"));
+        passwordField.sendKeys("124578");
+        WebElement login = driver.findElement(By.xpath("//button[@class='button-1 login-button']"));
+        login.click();
+        Thread.sleep(1000);
+        WebElement shoppingCart = driver.findElement( By.xpath("//span[contains(text(),'Shopping cart')]"));
+        WebElement goToCart = driver.findElement(By.xpath("//button[contains(text(),'Go to cart')]"));
+        actions.moveToElement(shoppingCart).moveToElement(goToCart).click().build().perform();
+    }
+
 @Test
     public void textverified(){
 //    1.1 Mouse Hover on “Electronics” Tab
@@ -95,20 +114,19 @@ public class ElectronicTest extends BaseTest {
         shopingCart.click();
 
 //        2.12 Verify the message "Shopping cart"
-//        Thread.sleep(1000);
-//        String actualResult5 = driver.findElement(By.xpath("//div[@class='page-title']/h1")).getText();
-//        System.out.println(actualResult5);
-//        String expectedTesult5= "Shopping cart";
-//        Assert.assertEquals(actualResult5,expectedTesult5);
-//
-////        2.13 Verify the quantity is 2
-//        Thread.sleep(1000);
-//        String actualResult6 = driver.findElement(By.xpath("//table[@class='cart']/tbody/tr/td[5]/input")).getText();
-//        System.out.println(actualResult6);
-//        String expectedTesult6= "2";
-//        Assert.assertEquals(actualResult6,expectedTesult6);
+        Thread.sleep(1000);
+        String actualResult5 = driver.findElement(By.xpath("//div[@class='page-title']/h1")).getText();
+        System.out.println(actualResult5);
+       String expectedTesult5= "Shopping cart";
+       Assert.assertEquals(actualResult5,expectedTesult5);
 
-//        2.14 Verify the Total $698.00
+//        2.13 Verify the quantity is 2
+        Thread.sleep(1000);
+       String actualResult6 = driver.findElement(By.xpath("//table[@class='cart']/tbody/tr/td[5]/input")).getText();
+       System.out.println(actualResult6);
+     //   String expectedTesult6= "2";Assert.assertEquals(actualResult6,expectedTesult6);
+
+
 
 //        2.15 click on checkbox “I agree with the terms of service”
         Thread.sleep(1000);
@@ -139,7 +157,7 @@ public class ElectronicTest extends BaseTest {
         Thread.sleep(1000);
         driver.findElement(By.id("FirstName")).sendKeys("kinja");
         driver.findElement(By.id("LastName")).sendKeys("sha");
-        driver.findElement(By.id("Email")).sendKeys("kin12@gmail.com");
+        driver.findElement(By.id("Email")).sendKeys(email);
         driver.findElement(By.id("Password")).sendKeys("124578");
         driver.findElement(By.id("ConfirmPassword")).sendKeys("124578");
 
@@ -165,9 +183,12 @@ public class ElectronicTest extends BaseTest {
         String expectedResult11= "Shopping cart";
         Assert.assertEquals(actualResult11,expectedResult11);
 
+        login();
+
 //        2.25 click on checkbox “I agree with the terms of service”
         Thread.sleep(1000);
-        driver.findElement(By.id("termsofservice")).click();
+        WebElement agreeTerms1 = driver.findElement(By.xpath("//input[@id='termsofservice']"));
+        agreeTerms1.click();
 
 //        2.26 Click on “CHECKOUT”
         Thread.sleep(1000);
@@ -175,40 +196,125 @@ public class ElectronicTest extends BaseTest {
 
 //        2.27 Fill the Mandatory fields
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[@id='checkout-billing-load']/div/div[2]/div/div/div[1]/input")).sendKeys("kinja");
-        driver.findElement(By.xpath("//div[@id='checkout-billing-load']/div/div[2]/div/div/div[2]/input")).sendKeys("sha");
-        driver.findElement(By.xpath("//div[@id='checkout-billing-load']/div/div[2]/div/div/div[3]/input")).sendKeys("kin12@gmail.com");
         WebElement dropdown3 = driver.findElement(By.xpath("//div[@class='edit-address']/div[5]/select")); //for country
         Select select3 =new Select(dropdown3);
-        select3.selectByIndex(29);
-//        driver.findElement(By.xpath("//div[@id='checkout-billing-load']/div/div[2]/div/div/div[2]/input")).sendKeys("sha");//city
-//
-
-
+        select3.selectByVisibleText("United Kingdom");
+        WebElement city = driver.findElement(By.xpath("//div[@class='edit-address']/div[7]/input"));
+        city.sendKeys("London");
+        WebElement address1 = driver.findElement(By.xpath("//div[@class='edit-address']/div[8]/input"));
+        address1.sendKeys("15,king street");
+        WebElement postCode = driver.findElement(By.xpath("//div[@class='edit-address']/div[10]/input"));
+        postCode.sendKeys("HA2 1TR");
+        WebElement telephone = driver.findElement(By.xpath("//div[@class='edit-address']/div[11]/input"));
+        telephone.sendKeys("7269874560");
 
 //        2.28 Click on “CONTINUE”
-
+        Thread.sleep(1000);
+        WebElement continueButton = driver.findElement(By.xpath("//div[@id='billing-buttons-container']/button[4]"));
+        continueButton.click();
 
 //        2.29 Click on Radio Button “2nd Day Air ($0.00)”
+        Thread.sleep(1000);
+        WebElement secondDayAir = driver.findElement(By.xpath("//input[@id='shippingoption_2']"));
+        secondDayAir.click();
+
 //        2.30 Click on “CONTINUE”
+        Thread.sleep(1000);
+        WebElement continueButton1 = driver.findElement(By.xpath("//div[@id='shipping-method-buttons-container']/button"));
+        continueButton1.click();
+
 //        2.31 Select Radio Button “Credit Card”
+        Thread.sleep(1000);
+        WebElement creditCard = driver.findElement(By.xpath("//div[@class='section payment-method']/ul/li[2]/div/div[2]/input"));
+        creditCard.click();
+        Thread.sleep(1000);
+        WebElement continueButton2 = driver.findElement(By.xpath("//div[@id='payment-method-buttons-container']/button"));
+        continueButton2.click();
+
 //        2.32 Select “Visa” From Select credit card dropdown
+        Thread.sleep(1000);
+        WebElement visaCard = driver.findElement(By.id("CreditCardType"));
+        Select select4 = new Select(visaCard);
+        select4.selectByIndex(0); // select by index
+
 //        2.33 Fill all the details
-//        2.34 Click on “CONTINUE”CHECKOUT”
-//
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@id='CardholderName']")).sendKeys("Kinj");
+
+        //Card number
+        driver.findElement(By.xpath("//input[@id='CardNumber']")).sendKeys("5555 1234 1234 ");
+
+        //Expiry Date(day)
+        driver.findElement(By.xpath("//select[@id='ExpireMonth']")).sendKeys("10");
+
+        //expiry year
+        driver.findElement(By.xpath("//select[@id='ExpireYear']")).sendKeys("2027");
+
+        // Card code
+        driver.findElement(By.xpath("//input[@id='CardCode']")).sendKeys("790");
+
+//        2.34 Click on “CONTINUE ”CHECKOUT”
+        Thread.sleep(1000);
+        WebElement continueButton3 = driver.findElement(By.xpath("//div[@id='payment-info-buttons-container']/button"));
+        continueButton3.click();
+
 //        2.35 Verify “Payment Method” is “Credit Card”
+        Thread.sleep(1000);
+        String actualResult13 = driver.findElement(By.xpath("//div[@class='payment-method-info']/ul/li/span[2]")).getText();
+        System.out.println(actualResult13);
+        String expectedResult13 = "Credit Card";
+        Assert.assertEquals(actualResult13,expectedResult13);
+
 //        2.36 Verify “Shipping Method” is “2nd Day Air”
+        Thread.sleep(1000);
+        String actualResult12 = driver.findElement(By.xpath("//div[@class='shipping-info-wrap']/div[2]/ul/li/span[2]")).getText();
+        System.out.println(actualResult12);
+
 //        2.37 Verify Total is “$698.00”
+        Thread.sleep(1000);
+        String actualResult14 = driver.findElement(By.xpath("//td[@class='subtotal']/span")).getText();
+        System.out.println(actualResult14);
+
 //        2.38 Click on “CONFIRM”
+        Thread.sleep(1000);
+        WebElement confirm = driver.findElement(By.xpath("//div[@id='confirm-order-buttons-container']/button"));
+        confirm.click();
+
 //        2.39 Verify the Text “Thank You”
+        Thread.sleep(1000);
+        String actualResult15 = driver.findElement(By.xpath("//div[@class='center-1']/div/div[1]/h1")).getText();
+        System.out.println(actualResult15);
+        String expectedResult15 = "Thank you";
+        Assert.assertEquals(actualResult15,expectedResult15);
+
 //        2.40 Verify the message “Your order has been successfully processed!”
+        Thread.sleep(1000);
+        String actualResult16 = driver.findElement(By.xpath("//div[@class='section order-completed']/div/strong")).getText();
+        System.out.println(actualResult16);
+        String expectedResult16 = "Your order has been successfully processed!";
+        Assert.assertEquals(actualResult16,expectedResult16);
+
 //        2.41 Click on “CONTINUE”
+        Thread.sleep(1000);
+        WebElement continueButton4 = driver.findElement(By.xpath("//div[@class='page-body checkout-data']/div/div[3]/button"));
+        continueButton4.click();
+
 //        2.42 Verify the text “Welcome to our store”
+        Thread.sleep(1000);
+        String actualResult17 = driver.findElement(By.xpath("//div[@class='topic-block-title']/h2")).getText();
+        System.out.println(actualResult17);
+        String expectedResult17 = "Welcome to our store";
+        Assert.assertEquals(actualResult17,expectedResult17);
+
 //        2.43 Click on “Logout” link
+        WebElement logOut = driver.findElement(By.className("ico-logout"));
+        logOut.click();
+
 //        2.44 Verify the URL is “https://demo.nopcommerce.com/”
-//*/
-
     }
-
-
+    @After
+    public void endTest() {
+        closeBrowser();
+    }
 }
+

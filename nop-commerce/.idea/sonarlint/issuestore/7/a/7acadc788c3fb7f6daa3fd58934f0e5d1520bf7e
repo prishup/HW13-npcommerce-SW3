@@ -1,0 +1,17 @@
+
+L	java:S106"+Replace this use of System.out by a logger.(¨ÁÉéşÿÿÿÿ8–î€æÃ1
+X
+java:S1854\";Remove this useless assignment to local variable "actions".(Œçá€8™î€æÃ1
+L	java:S106-"+Replace this use of System.out by a logger.(¨ÁÉéşÿÿÿÿ8œî€æÃ1
+G	java:S106;"+Replace this use of System.out by a logger.(§ğÊÁ8 î€æÃ1
+L	java:S106B"+Replace this use of System.out by a logger.(×½û‰şÿÿÿÿ8¡î€æÃ1
+L	java:S106R"+Replace this use of System.out by a logger.(›§çêıÿÿÿÿ8£î€æÃ1
+I
+java:S1481\",Remove this unused "actions" local variable.(Œçá€8ªî€æÃ1
+X	java:S125a"<This block of commented-out lines of code should be removed.(¯·Ä±8«î€æÃ1
+G	java:S106{"+Replace this use of System.out by a logger.(Ó÷Ï8¬î€æÃ1
+M	java:S106…"+Replace this use of System.out by a logger.(·¸‹şÿÿÿÿ8°î€æÃ1
+M	java:S106—"+Replace this use of System.out by a logger.(ÏşÈêÿÿÿÿÿ8³î€æÃ1
+H	java:S106¢"+Replace this use of System.out by a logger.(—¸ 8“˜„æÃ1
+M
+java:S5960"+Remove this assertion from production code.(öÀ©îÿÿÿÿÿ8¶î€æÃ1

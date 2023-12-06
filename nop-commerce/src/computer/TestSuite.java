@@ -1,6 +1,7 @@
 package computer;
 
 import browsefactory.BaseTest;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,8 +17,9 @@ public class TestSuite extends BaseTest {
     public void setUpOpenBrowser() {  //navigating to the Homepage
         openBrowser(baseUrl);
     }
+
     @Test
-    public void testName(){
+    public void testName() {
 //       1.1 Click on Computer Menu.
         driver.findElement(By.xpath("//div[@class='master-wrapper-page']/div[2]/ul[1]/li[1]/a")).click();
 
@@ -30,8 +32,8 @@ public class TestSuite extends BaseTest {
         select.selectByIndex(2); // select by index
 
 //     1.4 Verify the Product will arrange in Descending order.
-
     }
+
     @Test
     public void verifyProductAddedToShoppingCartSuccessFully() throws InterruptedException {
 //        2.1 Click on Computer Menu.
@@ -129,16 +131,16 @@ public class TestSuite extends BaseTest {
         driver.findElement(By.xpath("//div[@class='common-buttons']/button[1]")).click();
 
 ////        2.17 Verify the Total"$2,950.00"
-//        Thread.sleep(1000);
-//        String actualResult6 = driver.findElement(By.xpath("//table[@class='cart-total']/tbody/tr[4]/td[2]/span/strong")).getText();
-//        System.out.println(actualResult6);
-//        String expectedTesult6= "$2,950.00";
-//        Assert.assertEquals(actualResult6,expectedTesult6);
+        Thread.sleep(1000);
+        String actualResult6 = driver.findElement(By.xpath("//table[@class='cart-total']/tbody/tr[4]/td[2]/span/strong")).getText();
+        System.out.println(actualResult6);
+        String expectedTesult6= "$2,950.00";
+        Assert.assertEquals(actualResult6,expectedTesult6);
 
 
 //        2.18 click on checkbox “I agree with the terms of service”
         Thread.sleep(1000);
-        driver.findElement(By.id("termsofservice")).click();
+        driver.findElement(By.xpath("//input[@id='termsofservice']")).click();
 
 //        2.19 Click on “CHECKOUT”
         Thread.sleep(1000);
@@ -264,13 +266,16 @@ public class TestSuite extends BaseTest {
         driver.findElement(By.xpath("//div[@class='center-1']/div/div[2]/div[1]/div[3]/button")).click();
 
 ////        2.37 Verify the text “Welcome to our store”
-//        Thread.sleep(2000);
-//        String actualText11 = driver.findElement(By.xpath("//div[@class='page-body']/div[2]/div[1]/h2")).getText();
-//        System.out.println(actualText11);
-//        String expectedText11 = "Welcome to our store";
-//        Assert.assertEquals(actualText11, expectedText11);
-//    }
-    }}
+        Thread.sleep(2000);
+        String actualText11 = driver.findElement(By.xpath("//div[@class='page-body']/div[2]/div[1]/h2")).getText();
+        System.out.println(actualText11);
+        String expectedText11 = "Welcome to our store";
+        Assert.assertEquals(actualText11, expectedText11);
+    }
+    @After
+    public void endTest() {closeBrowser();
+    }
+}
 
 
 

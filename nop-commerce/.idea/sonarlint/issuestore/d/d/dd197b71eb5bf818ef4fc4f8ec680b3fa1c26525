@@ -1,0 +1,13 @@
+
+X
+java:S1854p";Remove this useless assignment to local variable "actions".(Œçá€8¾éçäÃ1
+G	java:S1068"+Replace this use of System.out by a logger.(Ö˜½8ÅéçäÃ1
+G	java:S106Y"+Replace this use of System.out by a logger.(Í¥¢¾8ØéçäÃ1
+L	java:S106f"+Replace this use of System.out by a logger.(›§çêıÿÿÿÿ8ÚéçäÃ1
+I
+java:S1481p",Remove this unused "actions" local variable.(Œçá€8äéçäÃ1
+G	java:S106w"+Replace this use of System.out by a logger.(˜ôÚ¤8æéçäÃ1
+Y	java:S125ƒ"<This block of commented-out lines of code should be removed.(¯·Ä±8êéçäÃ1
+M	java:S106•"+Replace this use of System.out by a logger.(šåÀ¬øÿÿÿÿ8íéçäÃ1
+M
+java:S5960:"+Remove this assertion from production code.(½½Ä½üÿÿÿÿ8ûéçäÃ1
