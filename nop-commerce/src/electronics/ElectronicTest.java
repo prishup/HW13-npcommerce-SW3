@@ -16,41 +16,41 @@ public class ElectronicTest extends BaseTest {
     @Before
     public void setUpOpenBrowser() {  //navigating to the Homepage
         openBrowser(baseUrl);
-
     }
-String email = "kish12345@yahoo.com";
-    public void login() throws InterruptedException {
-            Actions actions = new Actions(driver);
-            WebElement loginLink = driver.findElement(By.xpath("//a[contains(text(),'Log in')]"));
-            loginLink.click();
-            WebElement emailLoginField = driver.findElement(By.id("Email"));
-            emailLoginField.sendKeys(email);
 
-        WebElement passwordField = driver.findElement(By.id("Password"));
-        passwordField.sendKeys("124578");
-        WebElement login = driver.findElement(By.xpath("//button[@class='button-1 login-button']"));
-        login.click();
+    String email = "kish2095@yahoo.com";
+
+    public void login() throws InterruptedException {
+        Actions actions = new Actions(driver);
+        driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
+
+        driver.findElement(By.id("Email")).sendKeys(email);
+
+        driver.findElement(By.id("Password")).sendKeys("124578");
+
+        driver.findElement(By.xpath("//button[@class='button-1 login-button']")).click();
+
         Thread.sleep(1000);
-        WebElement shoppingCart = driver.findElement( By.xpath("//span[contains(text(),'Shopping cart')]"));
+        WebElement shoppingCart = driver.findElement(By.xpath("//span[contains(text(),'Shopping cart')]"));
         WebElement goToCart = driver.findElement(By.xpath("//button[contains(text(),'Go to cart')]"));
         actions.moveToElement(shoppingCart).moveToElement(goToCart).click().build().perform();
     }
 
-@Test
-    public void textverified(){
+    @Test
+    public void textverified() {
 //    1.1 Mouse Hover on “Electronics” Tab
-    driver.findElement(By.xpath("//div[@class='master-wrapper-page']/div[2]/ul[1]/li[2]/a")).click();
+        driver.findElement(By.xpath("//div[@class='master-wrapper-page']/div[2]/ul[1]/li[2]/a")).click();
 
 //    1.2 Mouse Hover on “Cell phones” and click
-    driver.findElement(By.xpath("//div[@class='page-body']/div[1]/div/div[2]/div/div/a")).click();
+        driver.findElement(By.xpath("//div[@class='page-body']/div[1]/div/div[2]/div/div/a")).click();
 
 //    1.3 Verify the text “Cell phones”
-    String actualText = driver.findElement(By.tagName("h1")).getText();
-    System.out.println(actualText);
-    String expectedResult ="Cell phones";
-    Assert.assertEquals(actualText,expectedResult);
-
+        String actualText = driver.findElement(By.tagName("h1")).getText();
+        System.out.println(actualText);
+        String expectedResult = "Cell phones";
+        Assert.assertEquals(actualText, expectedResult);
     }
+
     @Test
     public void verifyThatTheProductAddedSuccessfullyAndPlaceOrderSuccessfully() throws InterruptedException {
 //        2.1 Mouse Hover on “Electronics” Tab
@@ -63,8 +63,8 @@ String email = "kish12345@yahoo.com";
         Thread.sleep(1000);
         String actualText = driver.findElement(By.tagName("h1")).getText();
         System.out.println(actualText);
-        String expectedResult ="Cell phones";
-        Assert.assertEquals(actualText,expectedResult);
+        String expectedResult = "Cell phones";
+        Assert.assertEquals(actualText, expectedResult);
 
 //        2.4 Click on List View Tab
         driver.findElement(By.xpath("//div[@class='page-body']/div[1]/div[1]/a[2]")).click();
@@ -73,19 +73,19 @@ String email = "kish12345@yahoo.com";
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[@class='item-grid']/div[3]/div/div[2]/h2/a")).click();
 
-   // 2.6 Verify the text “Nokia Lumia 1020”
+        // 2.6 Verify the text “Nokia Lumia 1020”
         Thread.sleep(1000);
         String actualText1 = driver.findElement(By.tagName("h1")).getText();
         System.out.println(actualText1);
-        String expectedResult1 ="Nokia Lumia 1020";
-        Assert.assertEquals(actualText1,expectedResult1);
+        String expectedResult1 = "Nokia Lumia 1020";
+        Assert.assertEquals(actualText1, expectedResult1);
 
 //        2.7 Verify the price “$349.00”
         Thread.sleep(2000);
         String actualText2 = driver.findElement(By.id("price-value-20")).getText();
         System.out.println(actualText2);
-        String expectedResult2 ="$349.00";
-        Assert.assertEquals(actualText2,expectedResult2);
+        String expectedResult2 = "$349.00";
+        Assert.assertEquals(actualText2, expectedResult2);
 
 //        2.8 Change quantity to 2
         Thread.sleep(2000);
@@ -101,7 +101,7 @@ String email = "kish12345@yahoo.com";
         String actualResult4 = driver.findElement(By.xpath("//div[@id='bar-notification']/div/p")).getText();
         System.out.println(actualResult4);
         String expectedTesult4 = "The product has been added to your shopping cart";
-        Assert.assertEquals(actualResult4,expectedTesult4);
+        Assert.assertEquals(actualResult4, expectedTesult4);
 
 //        After that close the bar clicking on the cross button.
         Thread.sleep(1000);
@@ -117,15 +117,14 @@ String email = "kish12345@yahoo.com";
         Thread.sleep(1000);
         String actualResult5 = driver.findElement(By.xpath("//div[@class='page-title']/h1")).getText();
         System.out.println(actualResult5);
-       String expectedTesult5= "Shopping cart";
-       Assert.assertEquals(actualResult5,expectedTesult5);
+        String expectedTesult5 = "Shopping cart";
+        Assert.assertEquals(actualResult5, expectedTesult5);
 
 //        2.13 Verify the quantity is 2
         Thread.sleep(1000);
-       String actualResult6 = driver.findElement(By.xpath("//table[@class='cart']/tbody/tr/td[5]/input")).getText();
-       System.out.println(actualResult6);
-     //   String expectedTesult6= "2";Assert.assertEquals(actualResult6,expectedTesult6);
-
+        String actualResult6 = driver.findElement(By.xpath("//table[@class='cart']/tbody/tr/td[5]/input")).getText();
+        System.out.println(actualResult6);
+        //   String expectedTesult6= "2";Assert.assertEquals(actualResult6,expectedTesult6);
 
 
 //        2.15 click on checkbox “I agree with the terms of service”
@@ -140,8 +139,8 @@ String email = "kish12345@yahoo.com";
         Thread.sleep(1000);
         String actualResult8 = driver.findElement(By.tagName("h1")).getText();
         System.out.println(actualResult8);
-        String expectedTesult8= "Welcome, Please Sign In!";
-        Assert.assertEquals(actualResult8,expectedTesult8);
+        String expectedTesult8 = "Welcome, Please Sign In!";
+        Assert.assertEquals(actualResult8, expectedTesult8);
 
 //        2.18 Click on “REGISTER” tab
         driver.findElement(By.xpath("//div[@class='customer-blocks']/div[1]/div[3]/button[2]")).click();
@@ -150,8 +149,8 @@ String email = "kish12345@yahoo.com";
         Thread.sleep(1000);
         String actualResult9 = driver.findElement(By.tagName("h1")).getText();
         System.out.println(actualResult9);
-        String expectedResult9= "Register";
-        Assert.assertEquals(actualResult9,expectedResult9);
+        String expectedResult9 = "Register";
+        Assert.assertEquals(actualResult9, expectedResult9);
 
 //        2.20 Fill the mandatory fields
         Thread.sleep(1000);
@@ -169,8 +168,8 @@ String email = "kish12345@yahoo.com";
         Thread.sleep(1000);
         String actualResult10 = driver.findElement(By.xpath("//div[@class='master-wrapper-page']/div[3]/div[1]/div[1]/div/div[2]/div[1]")).getText();
         System.out.println(actualResult10);
-        String expectedResult10= "Your registration completed";
-        Assert.assertEquals(actualResult10,expectedResult10);
+        String expectedResult10 = "Your registration completed";
+        Assert.assertEquals(actualResult10, expectedResult10);
 
 //        2.23 Click on “CONTINUE” tab
         Thread.sleep(1000);
@@ -180,8 +179,8 @@ String email = "kish12345@yahoo.com";
         Thread.sleep(1000);
         String actualResult11 = driver.findElement(By.xpath("//div[@class='page-title']/h1")).getText();
         System.out.println(actualResult11);
-        String expectedResult11= "Shopping cart";
-        Assert.assertEquals(actualResult11,expectedResult11);
+        String expectedResult11 = "Shopping cart";
+        Assert.assertEquals(actualResult11, expectedResult11);
 
         login();
 
@@ -197,7 +196,7 @@ String email = "kish12345@yahoo.com";
 //        2.27 Fill the Mandatory fields
         Thread.sleep(1000);
         WebElement dropdown3 = driver.findElement(By.xpath("//div[@class='edit-address']/div[5]/select")); //for country
-        Select select3 =new Select(dropdown3);
+        Select select3 = new Select(dropdown3);
         select3.selectByVisibleText("United Kingdom");
         WebElement city = driver.findElement(By.xpath("//div[@class='edit-address']/div[7]/input"));
         city.sendKeys("London");
@@ -210,26 +209,23 @@ String email = "kish12345@yahoo.com";
 
 //        2.28 Click on “CONTINUE”
         Thread.sleep(1000);
-        WebElement continueButton = driver.findElement(By.xpath("//div[@id='billing-buttons-container']/button[4]"));
-        continueButton.click();
+        driver.findElement(By.xpath("//div[@id='billing-buttons-container']/button[4]")).click();
 
 //        2.29 Click on Radio Button “2nd Day Air ($0.00)”
         Thread.sleep(1000);
-        WebElement secondDayAir = driver.findElement(By.xpath("//input[@id='shippingoption_2']"));
-        secondDayAir.click();
+        driver.findElement(By.xpath("//input[@id='shippingoption_2']")).click();
 
 //        2.30 Click on “CONTINUE”
         Thread.sleep(1000);
-        WebElement continueButton1 = driver.findElement(By.xpath("//div[@id='shipping-method-buttons-container']/button"));
-        continueButton1.click();
+        driver.findElement(By.xpath("//div[@id='shipping-method-buttons-container']/button")).click();
+
 
 //        2.31 Select Radio Button “Credit Card”
         Thread.sleep(1000);
-        WebElement creditCard = driver.findElement(By.xpath("//div[@class='section payment-method']/ul/li[2]/div/div[2]/input"));
-        creditCard.click();
+        driver.findElement(By.xpath("//div[@class='section payment-method']/ul/li[2]/div/div[2]/input")).click();
+//click on continue
         Thread.sleep(1000);
-        WebElement continueButton2 = driver.findElement(By.xpath("//div[@id='payment-method-buttons-container']/button"));
-        continueButton2.click();
+        driver.findElement(By.xpath("//div[@id='payment-method-buttons-container']/button")).click();
 
 //        2.32 Select “Visa” From Select credit card dropdown
         Thread.sleep(1000);
@@ -255,15 +251,14 @@ String email = "kish12345@yahoo.com";
 
 //        2.34 Click on “CONTINUE ”CHECKOUT”
         Thread.sleep(1000);
-        WebElement continueButton3 = driver.findElement(By.xpath("//div[@id='payment-info-buttons-container']/button"));
-        continueButton3.click();
+        driver.findElement(By.xpath("//div[@id='payment-info-buttons-container']/button")).click();
 
 //        2.35 Verify “Payment Method” is “Credit Card”
         Thread.sleep(1000);
         String actualResult13 = driver.findElement(By.xpath("//div[@class='payment-method-info']/ul/li/span[2]")).getText();
         System.out.println(actualResult13);
         String expectedResult13 = "Credit Card";
-        Assert.assertEquals(actualResult13,expectedResult13);
+        Assert.assertEquals(actualResult13, expectedResult13);
 
 //        2.36 Verify “Shipping Method” is “2nd Day Air”
         Thread.sleep(1000);
@@ -277,41 +272,40 @@ String email = "kish12345@yahoo.com";
 
 //        2.38 Click on “CONFIRM”
         Thread.sleep(1000);
-        WebElement confirm = driver.findElement(By.xpath("//div[@id='confirm-order-buttons-container']/button"));
-        confirm.click();
+        driver.findElement(By.xpath("//div[@id='confirm-order-buttons-container']/button")).click();
 
 //        2.39 Verify the Text “Thank You”
         Thread.sleep(1000);
         String actualResult15 = driver.findElement(By.xpath("//div[@class='center-1']/div/div[1]/h1")).getText();
         System.out.println(actualResult15);
         String expectedResult15 = "Thank you";
-        Assert.assertEquals(actualResult15,expectedResult15);
+        Assert.assertEquals(actualResult15, expectedResult15);
 
 //        2.40 Verify the message “Your order has been successfully processed!”
         Thread.sleep(1000);
         String actualResult16 = driver.findElement(By.xpath("//div[@class='section order-completed']/div/strong")).getText();
         System.out.println(actualResult16);
         String expectedResult16 = "Your order has been successfully processed!";
-        Assert.assertEquals(actualResult16,expectedResult16);
+        Assert.assertEquals(actualResult16, expectedResult16);
 
 //        2.41 Click on “CONTINUE”
         Thread.sleep(1000);
-        WebElement continueButton4 = driver.findElement(By.xpath("//div[@class='page-body checkout-data']/div/div[3]/button"));
-        continueButton4.click();
+        driver.findElement(By.xpath("//div[@class='page-body checkout-data']/div/div[3]/button")).click();
+
 
 //        2.42 Verify the text “Welcome to our store”
         Thread.sleep(1000);
         String actualResult17 = driver.findElement(By.xpath("//div[@class='topic-block-title']/h2")).getText();
         System.out.println(actualResult17);
         String expectedResult17 = "Welcome to our store";
-        Assert.assertEquals(actualResult17,expectedResult17);
+        Assert.assertEquals(actualResult17, expectedResult17);
 
 //        2.43 Click on “Logout” link
-        WebElement logOut = driver.findElement(By.className("ico-logout"));
-        logOut.click();
+        driver.findElement(By.className("ico-logout")).click();
 
 //        2.44 Verify the URL is “https://demo.nopcommerce.com/”
     }
+
     @After
     public void endTest() {
         closeBrowser();

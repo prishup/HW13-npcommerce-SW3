@@ -1,13 +1,19 @@
 
 X
-java:S1854p";Remove this useless assignment to local variable "actions".(Œçá€8¾éçäÃ1
-G	java:S1068"+Replace this use of System.out by a logger.(Ö˜½8ÅéçäÃ1
-G	java:S106Y"+Replace this use of System.out by a logger.(Í¥¢¾8ØéçäÃ1
-L	java:S106f"+Replace this use of System.out by a logger.(›§çêıÿÿÿÿ8ÚéçäÃ1
+java:S1854s";Remove this useless assignment to local variable "actions".(Œçá€8¾éçäÃ1
+G	java:S106;"+Replace this use of System.out by a logger.(Ö˜½8ÅéçäÃ1
+G	java:S106\"+Replace this use of System.out by a logger.(Í¥¢¾8ÚéçäÃ1
+L	java:S106i"+Replace this use of System.out by a logger.(›§çêıÿÿÿÿ8íéçäÃ1
 I
-java:S1481p",Remove this unused "actions" local variable.(Œçá€8äéçäÃ1
-G	java:S106w"+Replace this use of System.out by a logger.(˜ôÚ¤8æéçäÃ1
-Y	java:S125ƒ"<This block of commented-out lines of code should be removed.(¯·Ä±8êéçäÃ1
-M	java:S106•"+Replace this use of System.out by a logger.(šåÀ¬øÿÿÿÿ8íéçäÃ1
+java:S1481s",Remove this unused "actions" local variable.(Œçá€8äéçäÃ1
+G	java:S106z"+Replace this use of System.out by a logger.(˜ôÚ¤8ªàÌ…Ä1
+M	java:S106ˆ"+Replace this use of System.out by a logger.(åÅòüÿÿÿÿ8¯àÌ…Ä1
+M	java:S106˜"+Replace this use of System.out by a logger.(šåÀ¬øÿÿÿÿ8³àÌ…Ä1
+H	java:S106á"+Replace this use of System.out by a logger.( †Ü¬8»àÌ…Ä1
+M	java:S106ë"+Replace this use of System.out by a logger.(È´Ûâşÿÿÿÿ8ÀàÌ…Ä1
+G	java:S106ó"+Replace this use of System.out by a logger.(¿Õ‚B8¤È·‰Ä1
+M	java:S106ş"+Replace this use of System.out by a logger.(Æ»†Ùıÿÿÿÿ8œ€¸‰Ä1
+H	java:S106…"+Replace this use of System.out by a logger.(ñ¶âÍ8¡¹‰Ä1
+G	java:S106"+Replace this use of System.out by a logger.(Õ•F8Û‘º‰Ä1
 M
-java:S5960:"+Remove this assertion from production code.(½½Ä½üÿÿÿÿ8ûéçäÃ1
+java:S5960="+Remove this assertion from production code.(½½Ä½üÿÿÿÿ8ûéçäÃ1

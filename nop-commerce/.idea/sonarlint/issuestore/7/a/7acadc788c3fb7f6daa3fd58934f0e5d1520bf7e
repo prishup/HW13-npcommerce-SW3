@@ -1,17 +1,27 @@
 
-L	java:S106"+Replace this use of System.out by a logger.(¨ÁÉéşÿÿÿÿ8–î€æÃ1
+i
+java:S1192"GDefine a constant instead of duplicating this literal "124578" 3 times.(ùÖúÿÿÿÿ8¬Ş¢‡Ä1
+L	java:S1061"+Replace this use of System.out by a logger.(¨ÁÉéşÿÿÿÿ8Ìà¢‡Ä1
 X
-java:S1854\";Remove this useless assignment to local variable "actions".(Œçá€8™î€æÃ1
-L	java:S106-"+Replace this use of System.out by a logger.(¨ÁÉéşÿÿÿÿ8œî€æÃ1
-G	java:S106;"+Replace this use of System.out by a logger.(§ğÊÁ8 î€æÃ1
-L	java:S106B"+Replace this use of System.out by a logger.(×½û‰şÿÿÿÿ8¡î€æÃ1
-L	java:S106R"+Replace this use of System.out by a logger.(›§çêıÿÿÿÿ8£î€æÃ1
+java:S1854p";Remove this useless assignment to local variable "actions".(Œçá€8Ğà¢‡Ä1
+L	java:S106A"+Replace this use of System.out by a logger.(¨ÁÉéşÿÿÿÿ8Úà¢‡Ä1
+G	java:S106O"+Replace this use of System.out by a logger.(§ğÊÁ8ßà¢‡Ä1
+L	java:S106V"+Replace this use of System.out by a logger.(×½û‰şÿÿÿÿ8áà¢‡Ä1
+L	java:S106f"+Replace this use of System.out by a logger.(›§çêıÿÿÿÿ8ëà¢‡Ä1
 I
-java:S1481\",Remove this unused "actions" local variable.(Œçá€8ªî€æÃ1
-X	java:S125a"<This block of commented-out lines of code should be removed.(¯·Ä±8«î€æÃ1
-G	java:S106{"+Replace this use of System.out by a logger.(Ó÷Ï8¬î€æÃ1
-M	java:S106…"+Replace this use of System.out by a logger.(·¸‹şÿÿÿÿ8°î€æÃ1
-M	java:S106—"+Replace this use of System.out by a logger.(ÏşÈêÿÿÿÿÿ8³î€æÃ1
-H	java:S106¢"+Replace this use of System.out by a logger.(—¸ 8“˜„æÃ1
+java:S1481p",Remove this unused "actions" local variable.(Œçá€8ïà¢‡Ä1
+G	java:S106w"+Replace this use of System.out by a logger.(˜ôÚ¤8¦á¢‡Ä1
+L	java:S106~"+Replace this use of System.out by a logger.(åÅòüÿÿÿÿ8¬á¢‡Ä1
+]	java:S125"<This block of commented-out lines of code should be removed.(Á…Ìøÿÿÿÿ8¯á¢‡Ä1
+H	java:S106"+Replace this use of System.out by a logger.(Ó÷Ï8´á¢‡Ä1
+M	java:S106˜"+Replace this use of System.out by a logger.(·¸‹şÿÿÿÿ8¿á¢‡Ä1
+M	java:S106«"+Replace this use of System.out by a logger.(ÏşÈêÿÿÿÿÿ8Éá¢‡Ä1
+H	java:S106¶"+Replace this use of System.out by a logger.(—¸ 8Ôá¢‡Ä1
+H	java:S106ˆ"+Replace this use of System.out by a logger.(·›úÅ8öá¢‡Ä1
+M	java:S106"+Replace this use of System.out by a logger.(ïÛÚ†øÿÿÿÿ8ûá¢‡Ä1
+H	java:S106”"+Replace this use of System.out by a logger.(Ïì’ş8€â¢‡Ä1
+M	java:S106"+Replace this use of System.out by a logger.(®¨¹Áÿÿÿÿÿ8„â¢‡Ä1
+M	java:S106¥"+Replace this use of System.out by a logger.(ß™èóıÿÿÿÿ8‰â¢‡Ä1
+G	java:S106±"+Replace this use of System.out by a logger.(°³Â)8‹â¢‡Ä1
 M
-java:S5960"+Remove this assertion from production code.(öÀ©îÿÿÿÿÿ8¶î€æÃ1
+java:S59603"+Remove this assertion from production code.(öÀ©îÿÿÿÿÿ8â¢‡Ä1
