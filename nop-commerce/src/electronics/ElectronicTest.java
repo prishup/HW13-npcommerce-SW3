@@ -17,7 +17,6 @@ public class ElectronicTest extends BaseTest {
     public void setUpOpenBrowser() {  //navigating to the Homepage
         openBrowser(baseUrl);
     }
-
     String email = "kish2095@yahoo.com";
 
     public void login() throws InterruptedException {
